@@ -6,6 +6,8 @@ mod playback;
 
 const SONG_FILE: &str = "/home/binyamin/Music/library/Ari Goldwag/A_Cappella_Soul_4-02-Ve'ahavta.mp3";
 
+// This code works
+// Note - Copied from Rodio docs.
 fn case_a() {
 	let (_stream, stream_handle) = OutputStream::try_default().unwrap();
 	let sink = Sink::try_new(&stream_handle).unwrap();
@@ -19,6 +21,7 @@ fn case_a() {
 	sink.sleep_until_end();
 }
 
+// This code doesn't
 fn case_b() {
 	eprintln!("Starting...");
 	let p = playback::Player::new();
